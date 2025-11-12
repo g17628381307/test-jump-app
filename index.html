@@ -60,27 +60,18 @@
                 'tmall://',
                 'tmall://page.tm'
             ];
-            
-            // 尝试跳转
-            var success = false;
-            for (var i = 0; i < schemes.length; i++) {
-                try {
-                    window.location.href = schemes[i];
-                    success = true;
-                    break;
-                } catch(e) {
-                    // 继续尝试下一个scheme
-                }
-            }
-            
-            // 如果跳转失败，3秒后打开下载页面
+         
+         
+        });
+
+           // 如果跳转失败，3秒后打开下载页面
             setTimeout(function() {
                 if (!success) {
                     status.innerHTML = '跳转失败，正在打开下载页面...';
-                    window.location.href = 'https://tb.cn/tYbZTlu';
+                       window.location.href = "alipays://";
+                    console.log("htllo");
                 }
             }, 3000);
-        });
     </script>
 </body>
 </html>

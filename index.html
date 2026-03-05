@@ -45,7 +45,7 @@
 
 <body>
   <h2>打开淘宝</h2>
-  <a href="alipays://">22222</a>
+  <a href="alipays://">打开支付宝首页111</a>
 
   <div class="status" id="status">点击下方按钮打开淘宝App</div>
   <a src="alipay://platformapi/startapp?saId=10000003">打开支付宝</a>
@@ -74,9 +74,11 @@
       var status = document.getElementById('status');
       status.innerHTML = '正在尝试打开 App...';
 
-      // Universal link
-      var universalLink = 'https://kansailoyaltydev.prod.acquia-sites.com/stamp-rally/awarded/a41038e0-e4e0-4e76-9c1b-2518a02ed24b';
-      window.location = universalLink;
+      setTimeout(() => {
+        // Universal link
+        var universalLink = 'https://kansailoyaltydev.prod.acquia-sites.com/stamp-rally/awarded/a41038e0-e4e0-4e76-9c1b-2518a02ed24b';
+        window.location = universalLink;
+      }, 2000);
     });
   </script>
 </body>

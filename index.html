@@ -69,11 +69,16 @@
 
     });
 
-    // 如果跳转失败，3秒后打开下载页面
-    setTimeout(function () {
-      window.location.href = "alipays://";
-      console.log("htllo");
-    }, 3000);
+    window.addEventListener('load', function () {
+      status.innerHTML = '如果跳转失败，3秒后打开下载页面...';
+
+      // 如果跳转失败，3秒后打开下载页面
+      setTimeout(function () {
+        window.location.href = "https://kansailoyaltydev.prod.acquia-sites.com";
+        console.log("htllo");
+      }, 3000);
+    })
+
   </script>
 </body>
 

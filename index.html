@@ -1,74 +1,84 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>跳转淘宝</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-            background: #fff;
-            color: #333;
-            text-align: center;
-        }
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            margin: 10px 0;
-            background: #ff4000;
-            color: white;
-            text-decoration: none;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .btn-secondary {
-            background: #f0f0f0;
-            color: #333;
-        }
-        .status {
-            margin: 20px 0;
-            padding: 10px;
-            background: #f9f9f9;
-            border-radius: 4px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>跳转淘宝</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #333;
+      text-align: center;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      background: #ff4000;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn-secondary {
+      background: #f0f0f0;
+      color: #333;
+    }
+
+    .status {
+      margin: 20px 0;
+      padding: 10px;
+      background: #f9f9f9;
+      border-radius: 4px;
+    }
+  </style>
 </head>
+
 <body>
-    <h2>打开淘宝</h2>
-    <a href="alipays://">打开支付宝首页111</a>
+  <h2>打开淘宝</h2>
+  <a href="alipays://">打开支付宝首页111</a>
 
-    <div class="status" id="status">点击下方按钮打开淘宝App</div>
-    <a src="alipay://platformapi/startapp?saId=10000003">打开支付宝</a>
-    <button class="btn" id="openApp">打开淘宝App</button>
-    <a href="https://kansailoyaltydev.prod.acquia-sites.com" class="btn btn-secondary" target="_blank">访问Soraca</a>
-    <a href="https://tb.cn/tYbZTlu" class="btn btn-secondary" target="_blank">下载淘宝App</a>
+  <div class="status" id="status">点击下方按钮打开淘宝App</div>
+  <a src="alipay://platformapi/startapp?saId=10000003">打开支付宝</a>
+  <button class="btn" id="openApp">打开淘宝App</button>
+  <a href="https://kansailoyaltydev.prod.acquia-sites.com" class="btn btn-secondary" target="_blank">访问Soraca</a>
+  <a href="https://tb.cn/tYbZTlu" class="btn btn-secondary" target="_blank">下载淘宝App</a>
 
-    <script>
-        document.getElementById('openApp').addEventListener('click', function() {
-            var status = document.getElementById('status');
-            status.innerHTML = '正在尝试打开淘宝App...';
-            
-            // 淘宝URL Schemes
-            var schemes = [
-                'taobao://',
-                'taobao://taobao.com',
-                'tmall://',
-                'tmall://page.tm'
-            ];
-         
-         
-        });
+  <script>
+    document.getElementById('openApp').addEventListener('click', function () {
+      var status = document.getElementById('status');
+      status.innerHTML = '正在尝试打开淘宝App...';
 
-           // 如果跳转失败，3秒后打开下载页面
-            setTimeout(function() {
-                window.location.href = "alipays://";
-                    console.log("htllo");
-            }, 3000);
-    </script>
+      // 淘宝URL Schemes
+      var schemes = [
+        'taobao://',
+        'taobao://taobao.com',
+        'tmall://',
+        'tmall://page.tm'
+      ];
+
+
+    });
+
+    // 页面加载完成后自动尝试打开 universal link
+    window.addEventListener('load', function () {
+      var status = document.getElementById('status');
+      status.innerHTML = '正在尝试打开 App...';
+
+      // Universal link
+      var universalLink = 'https://kansailoyaltydev.prod.acquia-sites.com/stamp-rally/awarded/a41038e0-e4e0-4e76-9c1b-2518a02ed24b';
+      window.location.href = universalLink;
+    });
+  </script>
 </body>
+
 </html>
